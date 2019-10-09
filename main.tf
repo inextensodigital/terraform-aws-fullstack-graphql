@@ -1,3 +1,7 @@
+terraform {
+  required_version = "0.12.9"
+}
+
 module "ied-lambda-graphql" {
   source = "../ied-lambda-graphql"
 
