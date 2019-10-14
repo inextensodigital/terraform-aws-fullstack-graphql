@@ -4,7 +4,7 @@ terraform {
 
 module "ied-lambda-graphql" {
   source  = "app.terraform.io/ied/lambda-graphql/aws"
-  version = "~>1.0.0"
+  version = "~>1.0.1"
 
   providers = {
     aws            = "aws"
@@ -35,4 +35,6 @@ module "ied-lambda-graphql" {
   logs_to_kibana_subscription_filter_name = var.logs_to_kibana_subscription_filter_name
 
   vpc = var.vpc
+
+  secret_managers = var.graphql_secret_managers
 }
