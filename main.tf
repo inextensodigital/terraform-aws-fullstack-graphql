@@ -4,7 +4,7 @@ terraform {
 
 module "ied-lambda-graphql" {
   source  = "app.terraform.io/ied/lambda-graphql/aws"
-  version = "~>1.1.0"
+  version = "~>1.2.0"
 
   providers = {
     aws            = "aws"
@@ -37,4 +37,5 @@ module "ied-lambda-graphql" {
   vpc = var.vpc
 
   secret_managers = var.graphql_secret_managers
+  environment     = var.graphql_environment
 }
