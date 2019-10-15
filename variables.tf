@@ -106,3 +106,8 @@ variable "graphql_secret_managers" {
   description = "list of the secret manager the lambda can read"
   default     = []
 }
+
+variable "graphql_environment" {
+  type        = "map"
+  description = "key value map of environment variables to give to the graphql lambda"
+}
