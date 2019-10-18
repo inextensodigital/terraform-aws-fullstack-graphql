@@ -115,7 +115,7 @@ variable "graphql_environment" {
 variable "graphql_handler" {
   type        = string
   description = "the lambda handler"
-  default     = "index.hanlder"
+  default     = "index.handler"
 }
 
 variable "graphql_runtime" {
