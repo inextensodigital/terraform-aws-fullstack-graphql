@@ -16,3 +16,8 @@ output "cloudfront_aliases" {
 output "graphql_lambda_arn" {
   value = module.ied-lambda-graphql.lambda_arn
 }
+
+output "graphql_role_name" {
+  value       = module.ied-lambda-graphql.lambda_role_name
+  description = "the lambda arn"
+}
