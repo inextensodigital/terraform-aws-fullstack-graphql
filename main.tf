@@ -38,4 +38,9 @@ module "ied-lambda-graphql" {
 
   secret_managers = var.graphql_secret_managers
   environment     = var.graphql_environment
+
+  lambda_runtime     = var.graphql_runtime
+  lambda_handler     = var.graphql_handler
+  lambda_timeout     = var.graphql_timeout
+  lambda_memory_size = var.graphql_memory_size
 }

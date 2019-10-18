@@ -111,3 +111,27 @@ variable "graphql_environment" {
   type        = "map"
   description = "key value map of environment variables to give to the graphql lambda"
 }
+
+variable "graphql_handler" {
+  type        = string
+  description = "the lambda handler"
+  default     = "index.hanlder"
+}
+
+variable "graphql_runtime" {
+  type        = string
+  description = "the lambda runtime"
+  default     = "nodejs10.x"
+}
+
+variable "graphql_timeout" {
+  type        = number
+  description = "the lambda timeout"
+  default     = 6
+}
+
+variable "graphql_memory_size" {
+  type        = number
+  description = "the lambda memory_size"
+  default     = 1024
+}
