@@ -1,4 +1,5 @@
 data "aws_iam_policy_document" "s3_site_policy" {
+  provider = "aws.n_virginia"
   statement {
     actions   = ["s3:ListBucket"]
     resources = ["arn:aws:s3:::${local.s3_site_bucket_name}"]
@@ -23,6 +24,11 @@ data "aws_iam_policy_document" "s3_site_policy" {
 resource "aws_s3_bucket" "site" {
   bucket = local.s3_site_bucket_name
   acl    = "private"
+
+  region   = "us-east-1"
+  provider = "aws.n_virginia"
+
+  force_destroy = true
 
   tags = var.common_tags
 
