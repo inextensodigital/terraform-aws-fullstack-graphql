@@ -16,7 +16,7 @@ locals {
   rest_origin_id    = "${var.app_id}-api"
 
   ## SITE ORIGIN
-  site_origin_id = "${var.app_id}-site-us"
+  site_origin_id = "${var.app_id}-site"
 
   zones = [for domain in var.domains : regex("([^\\.]+)\\.(.+)", domain)[1]]
 }
