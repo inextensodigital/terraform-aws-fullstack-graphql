@@ -8,7 +8,7 @@ locals {
 
   # S3 VARIABLES
   # the bucket where the front-end is deployed
-  s3_site_bucket_name = "${var.app_id}-front-end"
+  s3_site_bucket_name = "${var.app_id}-front-end--us-1"
 
   # CLOUDFRONT VARIABLES
   ## GRAPHQL ORIGIN
@@ -16,7 +16,7 @@ locals {
   rest_origin_id    = "${var.app_id}-api"
 
   ## SITE ORIGIN
-  site_origin_id = "${var.app_id}-site"
+  site_origin_id = "${var.app_id}-site-us"
 
   zones = [for domain in var.domains : regex("([^\\.]+)\\.(.+)", domain)[1]]
 }
