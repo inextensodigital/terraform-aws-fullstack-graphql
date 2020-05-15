@@ -137,7 +137,7 @@ variable "graphql_memory_size" {
 }
 
 variable "redirect_dk" {
-  type        = "boolean"
+  type        = bool
   default     = false
   description = "whether dk request should be redirected to direct domain"
 }
