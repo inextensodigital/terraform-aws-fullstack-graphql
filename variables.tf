@@ -135,3 +135,9 @@ variable "graphql_memory_size" {
   description = "the lambda memory_size"
   default     = 1024
 }
+
+variable "redirect_dk" {
+  type        = "boolean"
+  default     = false
+  description = "whether dk request should be redirected to direct domain"
+}

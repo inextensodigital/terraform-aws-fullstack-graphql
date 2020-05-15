@@ -21,3 +21,15 @@ data "aws_lambda_function" "custom_headers" {
   qualifier     = data.aws_lambda_function.tf_custom_headers.version
   provider      = "aws.n_virginia"
 }
+
+data "aws_lambda_function" "tf_redirectDK" {
+  function_name = "redirectDK"
+  qualifier     = "TFRedirectDK"
+  provider      = "aws.n_virginia"
+}
+
+data "aws_lambda_function" "redirectDK" {
+  function_name = "redirectDK"
+  qualifier     = data.aws_lambda_function.tf_redirectDK.version
+  provider      = "aws.n_virginia"
+}
