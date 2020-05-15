@@ -104,7 +104,7 @@ resource "aws_cloudfront_distribution" "main" {
     }
 
     dynamic lambda_function_association {
-      for_each = var.redirect_dk == "" ? [] : [true]
+      for_each = var.redirect_dk ? [true] : []
 
       content {
         event_type   = "viewer-request"
