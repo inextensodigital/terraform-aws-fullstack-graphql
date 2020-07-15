@@ -4,7 +4,7 @@ terraform {
 
 module "ied-lambda-graphql" {
   source  = "app.terraform.io/ied/lambda-graphql/aws"
-  version = "~>2.0.0"
+  version = "~>2.0.1"
 
   providers = {
     aws            = "aws"
@@ -28,6 +28,8 @@ module "ied-lambda-graphql" {
 
   graphql_domain           = var.graphql_domain
   alternate_graphql_domain = var.alternate_graphql_domain
+
+  graphql_binary_media_types = var.graphql_binary_media_types
 
   backend_lambda_filename = var.backend_lambda_filename
 
