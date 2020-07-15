@@ -29,6 +29,8 @@ module "ied-lambda-graphql" {
   graphql_domain           = var.graphql_domain
   alternate_graphql_domain = var.alternate_graphql_domain
 
+  graphql_binary_media_types = var.graphql_binary_media_types
+
   backend_lambda_filename = var.backend_lambda_filename
 
   lambda_logs_to_kibana_name              = var.lambda_logs_to_kibana_name

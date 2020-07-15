@@ -136,6 +136,12 @@ variable "graphql_memory_size" {
   default     = 1024
 }
 
+variable "graphql_binary_media_types" {
+  type = array(string)
+  description: "binary media types given to graphql api gateway"
+  default = null
+}
+
 variable "redirect_dk" {
   type        = bool
   default     = false
