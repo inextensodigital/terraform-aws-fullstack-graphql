@@ -25,8 +25,7 @@ resource "aws_s3_bucket" "site" {
   bucket = local.s3_site_bucket_name
   acl    = "private"
 
-  region   = "us-east-1"
-  provider = "aws.n_virginia"
+  provider = aws.n_virginia
 
   force_destroy = true
 
