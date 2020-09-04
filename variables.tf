@@ -136,6 +136,12 @@ variable "graphql_memory_size" {
   default     = 1024
 }
 
+variable "graphql_publish" {
+  type        = bool
+  description = "whether the graphql lambda is published or not"
+  default     = false
+}
+
 variable "graphql_binary_media_types" {
   type        = list(string)
   description = "binary media types given to graphql api gateway"
