@@ -4,7 +4,7 @@ terraform {
 
 module "ied-lambda-graphql" {
   source  = "app.terraform.io/ied/lambda-graphql/aws"
-  version = "~>2.0.1"
+  version = "~>2.0.2"
 
   providers = {
     aws            = "aws"
@@ -45,4 +45,5 @@ module "ied-lambda-graphql" {
   lambda_handler     = var.graphql_handler
   lambda_timeout     = var.graphql_timeout
   lambda_memory_size = var.graphql_memory_size
+  lambda_publish     = var.graphql_publish
 }
