@@ -1,7 +1,7 @@
 resource "aws_cloudfront_distribution" "main" {
   enabled = true
 
-  tags = "${var.common_tags}"
+  tags = var.common_tags
 
   comment = "By Terraform"
 
@@ -19,7 +19,7 @@ resource "aws_cloudfront_distribution" "main" {
   viewer_certificate {
     acm_certificate_arn      = data.aws_acm_certificate.certificate.arn
     ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1.2_2019"
+    minimum_protocol_version = "TLSv1.2_2018"
   }
 
   # Route53 requires Alias/CNAME to be setup
@@ -101,16 +101,6 @@ resource "aws_cloudfront_distribution" "main" {
       event_type   = "origin-response"
       lambda_arn   = data.aws_lambda_function.custom_headers.qualified_arn
       include_body = false
-    }
-
-    dynamic lambda_function_association {
-      for_each = var.redirect_dk ? [true] : []
-
-      content {
-        event_type   = "viewer-request"
-        lambda_arn   = data.aws_lambda_function.redirectDK.qualified_arn
-        include_body = false
-      }
     }
   }
 

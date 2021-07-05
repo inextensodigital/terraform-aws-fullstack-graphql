@@ -13,11 +13,22 @@ output "cloudfront_aliases" {
   description = "The cloud front aliases"
 }
 
-output "graphql_lambda_arn" {
-  value = module.ied-lambda-graphql.lambda_arn
+output "lambda_versions" {
+  value       = module.ied-lambda-graphql.lambda_versions
+  description = "the lambda versions"
 }
 
-output "graphql_role_name" {
-  value       = module.ied-lambda-graphql.lambda_role_name
-  description = "the lambda arn"
+output "lambda_role_names" {
+  value       = module.ied-lambda-graphql.lambda_role_names
+  description = "the lambda roles"
+}
+
+output "lambda_arns" {
+  value       = module.ied-lambda-graphql.lambda_arns
+  description = "the lambda arns"
+}
+
+output "lambda_function_names" {
+  value       = module.ied-lambda-graphql.lambda_function_names
+  description = "the lambda function name"
 }
