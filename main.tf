@@ -1,14 +1,33 @@
 terraform {
-  required_version = "0.12.9"
+  required_version = ">=0.13.6"
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    null = {
+      source = "hashicorp/null"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+    template = {
+      source = "hashicorp/template"
+    }
+    tls = {
+      source = "hashicorp/tls"
+    }
+  }
 }
 
+
+
 module "ied-lambda-graphql" {
-  source  = "app.terraform.io/ied/lambda-graphql/aws"
-  version = "~>2.0.2"
+  source = "../graphql"
+  version = "~>3.0.0"
 
   providers = {
-    aws            = "aws"
-    aws.n_virginia = "aws.n_virginia"
+    aws            = aws
+    aws.n_virginia = aws.n_virginia
   }
 
   common_tags = var.common_tags
@@ -38,12 +57,8 @@ module "ied-lambda-graphql" {
 
   vpc = var.vpc
 
-  secret_managers = var.graphql_secret_managers
-  environment     = var.graphql_environment
+  secret_managers = var.lambda_secrets
+  environment     = var.lambda_environment
 
-  lambda_runtime     = var.graphql_runtime
-  lambda_handler     = var.graphql_handler
-  lambda_timeout     = var.graphql_timeout
-  lambda_memory_size = var.graphql_memory_size
-  lambda_publish     = var.graphql_publish
+  routes = var.routes
 }

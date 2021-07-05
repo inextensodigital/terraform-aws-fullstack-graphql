@@ -1,5 +1,5 @@
 data "aws_iam_policy_document" "s3_site_policy" {
-  provider = "aws.n_virginia"
+  provider = aws.n_virginia
   statement {
     actions   = ["s3:ListBucket"]
     resources = ["arn:aws:s3:::${local.s3_site_bucket_name}"]

@@ -1,6 +1,6 @@
 data "aws_route53_zone" "site" {
   count = length(local.zones)
-  name  = "${local.zones[count.index]}."
+  name  = local.zones[count.index]
 }
 
 resource "aws_route53_record" "subdomain" {
