@@ -19,10 +19,8 @@ terraform {
   }
 }
 
-
-
 module "ied-lambda-graphql" {
-  source = "../graphql"
+  source  = "app.terraform.io/ied/lambda-graphql/aws"
   version = "~>10.13.0"
 
   providers = {
