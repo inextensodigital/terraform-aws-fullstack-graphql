@@ -6,7 +6,7 @@ terraform module for deploying a graphql full stack on aws (cloudfront, api gate
 ```hcl
 module "ied-fullstack-graphql" {
   source  = "app.terraform.io/ied/fullstack-graphql/aws"
-  version = "~>3.0.0"
+  version = "~>10.13.0"
 
   providers = {
     aws            = aws
